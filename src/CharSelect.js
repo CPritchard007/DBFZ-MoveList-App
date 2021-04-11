@@ -1,36 +1,24 @@
-import React from 'react'
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import { View, Button, SafeAreaView, StyleSheet, StatusBar, Text } from 'react-native'
-import { globalStyle } from '../themes/defaultTheme'
+import React from 'react';
+import { FlatList, SafeAreaView, ScrollView, View, Text } from 'react-native';
+import MatIcon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/AntDesign'
+import { globalStyle } from '../themes/defaultTheme';
 
-export const CharSelect = function ({navigation}) {
+const characterList = require('../assets/data/characters.json');
+
+export const CharSelect = ({navigation}) => {
     React.useLayoutEffect( () => {
         navigation.setOptions({
             headerRight: () => (
-                <Icon name="settings" size={18} style={{padding:15}} color="#fff" onPress={() => {alert("Hello World")}} />
-            ),
-            
+                <MatIcon name="settings" size={18} style={{padding:15}} color="#fff" onPress={() => {alert("Hello World")}} />
+            ),  
         })
-    })
-
-    const CustomButton = ({title}) => (
-        <Text style={globalStyle.mainMenuButton} onPress={() => {alert()}}>{title}</Text>
-    );
-
-
+    });
     return (
-        
     <SafeAreaView style={globalStyle.mainContainer}>
-        <StatusBar barStyle='light-content' />
-        <View padding={30}>
-            <Text style={globalStyle.h2} >Welcome To</Text>
-            <Text style={globalStyle.h1}>Dragonball FZ</Text>
-            <Text style={[globalStyle.h2, {textAlign: 'center'}]}>Companion</Text>
-        </View>        
-        <CustomButton title="Choose Your Character"/>
-        <CustomButton title="About Us"/>
+            <FlatList data={characterList} renderItem={({item}) => (
+                <View style={globalStyle.characterSelectButton}><Icon size={40} style={globalStyle.characterSelectIcon} name="user" /><Text style={globalStyle.characterSelectText}>{item.name}</Text></View>
+            )}/>
     </SafeAreaView>
     );
-
-    
 }

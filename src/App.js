@@ -9,8 +9,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { CharSelect } from './CharSelect';
+import { MainMenu } from './MainMenu';
 import { SafeAreaView, StatusBar, View } from 'react-native';
+import { CharSelect } from './CharSelect';
 
 const App = () => {
 
@@ -20,8 +21,8 @@ const App = () => {
     
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="CharSelect"  component={CharSelect} options={{headerShown: true, headerStyle: { backgroundColor: "#f47b26"}, headerTintColor: "#fff", headerTitle: "Character Select"}}/>
-          
+          <Stack.Screen name="menu"  component={MainMenu} options={{headerShown: true, headerStyle: { backgroundColor: "#f47b26"}, headerTintColor: "#fff0", }}/>
+          <Stack.Screen name="charSelect" component={CharSelect} options={{headerShown: true, headerStyle: { backgroundColor: "#f47b26"}, headerTintColor: "#fff", title:"Character Select" }}/>
         </Stack.Navigator>
       </NavigationContainer>
     
