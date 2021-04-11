@@ -3,5 +3,5 @@ module.exports = {
       ios: {},
       android: {},
     },
-    assets: ['./App/assets/fonts'],
+    assets: ['./assets/fonts', './node_modules/react-native-vector-icons/Fonts'], // <= add custom fonts and Vector Icons Sets
   };
