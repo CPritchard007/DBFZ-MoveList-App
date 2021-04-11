@@ -9,18 +9,23 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { View } from 'react-native' 
+import { CharSelect } from './CharSelect';
+import { SafeAreaView, StatusBar, View } from 'react-native';
 
 const App = () => {
 
   const Stack = createStackNavigator();
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={()=>(<View></View>)} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="CharSelect"  component={CharSelect} options={{headerShown: true, headerStyle: { backgroundColor: "#f47b26"}, headerTintColor: "#fff", headerTitle: "Character Select"}}/>
+          
+        </Stack.Navigator>
+      </NavigationContainer>
+    
+    
   );
 };
 
