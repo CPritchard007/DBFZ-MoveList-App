@@ -1,7 +1,7 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { View, Button, SafeAreaView, StyleSheet, StatusBar, Text } from 'react-native'
-import { globalStyle } from '../themes/defaultTheme'
+import { globalStyle } from '../themes/PinkinTheme'
 
 export const MainMenu = function ({navigation}) {
     React.useLayoutEffect( () => {

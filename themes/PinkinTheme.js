@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native'
 
-export const primaryColor = "#f47b26";
+export const primaryColor = "#f61068";
 
 export const globalStyle = StyleSheet.create({
 
@@ -17,7 +17,7 @@ export const globalStyle = StyleSheet.create({
 
     mainContainer: {
         flex: 1,
-        backgroundColor: "#8f4917"
+        backgroundColor: "#111"
     },
 
     h2: {
