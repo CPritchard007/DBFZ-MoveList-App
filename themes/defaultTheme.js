@@ -37,13 +37,16 @@ export const globalStyle = StyleSheet.create({
     },
 
     mainMenuButton: {
-        fontFamily: 'Roboto-Bold',
-        color: 'black',
+        // fontFamily: 'PermanentMarker-Regular',
+        color: 'white',
         paddingTop: 15,
         paddingBottom: 15,
         paddingLeft: 15,
+        marginTop: 10,
+        
+        fontSize: 30,
         backgroundColor: 'white',
-        margin: 10
+        color: 'black'
     },
     
 

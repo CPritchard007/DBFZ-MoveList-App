@@ -12,22 +12,19 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { MainMenu } from './MainMenu';
 import { SafeAreaView, StatusBar, View } from 'react-native';
 import { CharSelect } from './CharSelect';
-import { globalStyle, primaryColor } from '../themes/PinkinTheme';
+import { globalStyle, primaryColor } from '../themes/defaultTheme';
 
 const App = () => {
 
   const Stack = createStackNavigator();
 
   return (
-    
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="menu" component={MainMenu} options={{headerShown: true, headerStyle: { backgroundColor: primaryColor}, headerTintColor: "#fff0", }}/>
           <Stack.Screen name="charSelect" component={CharSelect} options={{headerShown: true, headerStyle: { backgroundColor: primaryColor}, headerTintColor: "#fff", title:"Character Select" }}/>
         </Stack.Navigator>
-      </NavigationContainer>
-    
-    
+      </NavigationContainer> 
   );
 };
 
