@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native'
 
-export const primaryColor = "#f47b26";
+export const primaryColor = "#333" /* #f47b26 */;
 
 export const globalStyle = StyleSheet.create({
 
@@ -17,12 +17,12 @@ export const globalStyle = StyleSheet.create({
 
     mainContainer: {
         flex: 1,
-        backgroundColor: "#8f4917"
+        backgroundColor: "#111" /* #8f4917 */
     },
 
     h2: {
         
-        fontSize: 28,
+        fontSize: 24,
         color:"white",
         fontFamily: 'Roboto-Bold',
         margin: -10,
@@ -30,7 +30,7 @@ export const globalStyle = StyleSheet.create({
     h1: {
         fontFamily: 'PermanentMarker-Regular',
         fontSize: 36,
-        color:"wheat",
+        color:"red",
         textAlign: 'center',
         shadowColor: "red",
         

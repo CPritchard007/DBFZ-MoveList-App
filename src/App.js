@@ -11,7 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { MainMenu } from './MainMenu';
 import { SafeAreaView, StatusBar, View } from 'react-native';
-import { CharSelect } from './CharSelect';
+import { CharSelect } from './Dragonball Fighter Z/CharacterSelect';
 import { globalStyle, primaryColor } from '../themes/defaultTheme';
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="menu" component={MainMenu} options={{headerShown: true, headerStyle: { backgroundColor: primaryColor}, headerTintColor: "#fff0", }}/>
-          <Stack.Screen name="charSelect" component={CharSelect} options={{headerShown: true, headerStyle: { backgroundColor: primaryColor}, headerTintColor: "#fff", title:"Character Select" }}/>
+          <Stack.Screen name="dragonballFighterZ" component={CharSelect} options={{headerShown: true, headerStyle: { backgroundColor: primaryColor}, headerTintColor: "#fff", title:"Character Select" }}/>
         </Stack.Navigator>
       </NavigationContainer> 
   );

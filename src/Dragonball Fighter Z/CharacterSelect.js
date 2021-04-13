@@ -2,9 +2,9 @@ import React from 'react';
 import { FlatList, SafeAreaView, ScrollView, View, Text } from 'react-native';
 import MatIcon from 'react-native-vector-icons/MaterialIcons'
 import Icon from 'react-native-vector-icons/AntDesign'
-import { globalStyle } from '../themes/defaultTheme';
+import { globalStyle } from '../../themes/defaultTheme';
 
-const characterList = require('../assets/data/characters.json');
+const characterList = require('../../assets/data/characters.json');
 
 export const CharSelect = ({navigation}) => {
     React.useLayoutEffect( () => {
