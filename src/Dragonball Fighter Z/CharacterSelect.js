@@ -1,10 +1,9 @@
 import React from 'react';
 import { FlatList, SafeAreaView, ScrollView, View, Text, Dimensions, TouchableOpacity } from 'react-native';
-import FontIcon from 'react-native-vector-icons/FontAwesome5'
-import Icon from 'react-native-vector-icons/AntDesign'
+import FontIcon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/AntDesign';
 import { globalStyle } from '../../themes/defaultTheme';
-import FontistoIcon from 'react-native-vector-icons/Fontisto'
-
+import FontistoIcon from 'react-native-vector-icons/Fontisto';
 
 const moveData = require('../../assets/data/movelist/DBFZ_MOVELIST').MOVE_LIST;
 const characterList = require('../../assets/data/characters.json');
