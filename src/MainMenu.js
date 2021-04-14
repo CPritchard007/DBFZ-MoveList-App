@@ -39,7 +39,7 @@ export const MainMenu = function ({navigation}) {
         </View>        
         <ScrollView style={{marginBottom: 40}}>
             <View style={{flexWrap: 'wrap', flexDirection: 'row',}}>
-                <CustomBlockButton title="Dragonball FighterZ" pushTo="dragonballFighterZ"/>
+                <CustomBlockButton title="Dragonball FighterZ" pushTo="dragonballFighterZ/CharacterSelect"/>
                 <CustomBlockButton title="Smash Brothers Ultimate" disabled/>
                 <CustomBlockButton title="Guilty Gear: Strive" disabled/>
                 <CustomBlockButton title="BlazBlue Cross Tag Battle" disabled/>

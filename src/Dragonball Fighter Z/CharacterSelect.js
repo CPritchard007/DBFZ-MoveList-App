@@ -1,16 +1,19 @@
 import React from 'react';
-import { FlatList, SafeAreaView, ScrollView, View, Text, Dimensions } from 'react-native';
-import MatIcon from 'react-native-vector-icons/MaterialIcons'
+import { FlatList, SafeAreaView, ScrollView, View, Text, Dimensions, TouchableOpacity } from 'react-native';
+import FontIcon from 'react-native-vector-icons/FontAwesome5'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { globalStyle } from '../../themes/defaultTheme';
+import FontistoIcon from 'react-native-vector-icons/Fontisto'
 
+
+const moveData = require('../../assets/data/movelist/DBFZ_MOVELIST').MOVE_LIST;
 const characterList = require('../../assets/data/characters.json');
 
 export const FlatCharSelect = ({navigation}) => {
     React.useLayoutEffect( () => {
         navigation.setOptions({
             headerRight: () => (
-                <MatIcon name="settings" size={18} style={{padding:15}} color="#fff" onPress={() => {alert("Hello World")}} />
+                <FontIcon name="ellipse-v" size={18} style={{padding:15}} color="#fff" onPress={() => {alert("Hello World")}} />
             ),  
         })
     });
@@ -28,7 +31,7 @@ export const GridCharacterSelect = ({navigation}) => {
     React.useLayoutEffect( () => {
         navigation.setOptions({
             headerRight: () => (
-                <MatIcon name="settings" size={18} style={{padding:15}} color="#fff" onPress={() => {alert("Hello World")}} />
+                <FontIcon name="ellipsis-v" size={18} style={{padding:15}} color="#fff" onPress={() => {alert("Hello World")}} />
             ),  
         })
     });
@@ -39,10 +42,16 @@ export const GridCharacterSelect = ({navigation}) => {
         const numberOfCells = 3;
         const cellMargin = 3;
         var itemWidth = screenWidth / numberOfCells - cellMargin * 2;
-    
-        items.push(
-            <View style={{backgroundColor: '#666', width:itemWidth, height: itemWidth, margin: cellMargin, position: 'relative'}}><Text style={{color: 'white', position: 'absolute', bottom: 0, right: 0, padding: 5, backgroundColor: "#333"}}>{character.name}</Text></View>
-        )
+        
+        if (moveData[character.name] == undefined){
+            items.push (
+                <TouchableOpacity disabled={true} ><View style={{backgroundColor: '#333', width:itemWidth, height: itemWidth, margin: cellMargin, position: 'relative'}}><Text style={{color: 'white', position: 'absolute', bottom: 0, right: 0, padding: 5, backgroundColor: "#333"}}>{character.name}</Text><FontistoIcon name="locked" color="" size={30} style={{position: 'absolute', top: 10, left: 15}} /></View></TouchableOpacity>
+            )
+        } else {
+            items.unshift(
+                <TouchableOpacity onPress={()=>navigation.navigate("dragonballFighterZ/MoveList", {character: character})} ><View style={{backgroundColor: '#666', width:itemWidth, height: itemWidth, margin: cellMargin, position: 'relative'}}><Text style={{color: 'white', position: 'absolute', bottom: 0, right: 0, padding: 5, backgroundColor: "#333"}}>{character.name}</Text></View></TouchableOpacity>
+            )
+        }
     }
     return (
         <SafeAreaView style={globalStyle.mainContainer}>
